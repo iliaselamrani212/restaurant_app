@@ -12,14 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('food', function (Blueprint $table) {
-            $table->increment("id");
+            $table->id();
             $table->string("name")->nullable();
             $table->string("description");
             $table->integer("price")->nullable();
             $table->string("image")->nullable();
-            $table->integer("category_id")->nullable();
+            $table->unsignedBigInteger("id_category");
             $table->integer("reduction");
             $table->timestamps();
+            $table->foreign('id_category')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 
