@@ -1,4 +1,12 @@
 @extends('navbar')
+@section('title')
+Home
+@endsection
+@section('image')
+ <div class="bg-box">
+      <img src="images/hero-bg.jpg" alt="">
+    </div>
+    @endsection
 @section('content')
     <!-- slider section -->
     <section class="slider_section ">

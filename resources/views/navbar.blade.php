@@ -13,7 +13,7 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href=" {!! asset('images/favicon.png') !!}" type="">
 
-  <title> Feane </title>
+  <title> @yield('title') </title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet"  href="{!! asset('css/bootstrap.css') !!}" />
@@ -35,9 +35,10 @@
 <body>
 
   <div class="hero_area">
-    <div class="bg-box">
+    @yield('image')
+    <!-- <div class="bg-box">
       <img src="images/hero-bg.jpg" alt="">
-    </div>
+    </div> -->
     <!-- header section strats -->
     <header class="header_section">
       <div class="container">
