@@ -13,6 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('admin', function () {
-    return view('Admin/dashboardAdmin');
-});
+
+Route::get('users', 'App\Http\Controllers\UserController@getUsers');
