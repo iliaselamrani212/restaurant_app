@@ -118,7 +118,7 @@
             <ul class="sidebar-menu">
                 <li class="nav-level">--- Navigation</li>
                 <li class="active treeview">
-                    <a class="waves-effect waves-dark" href="index.html">
+                    <a class="waves-effect waves-dark" href="{{route('dashboard')}}">
                         <i class="icon-speedometer"></i><span> Dashboard</span>
                     </a>                
                 </li>
@@ -131,8 +131,24 @@
             </li>
             <li class="nav-level">---user</li>
                 <li class="active treeview">
-                    <a class="waves-effect waves-dark" href="index.html">
-                        <i class="icon-speedometer"></i><span> users</span>
+                    <a class="waves-effect waves-dark" href="{{route('users')}}">
+                        <i class="icon-user"></i><span> users</span>
+                    </a>                
+                </li>
+                <li class="nav-level">---Menu of food</li>
+                <li class="active treeview">
+                    <a class="waves-effect waves-dark" href="{{route('users')}}">
+                    <i class="fa-solid fa-sliders"></i><span> Categories</span>
+                    </a>                
+                </li>
+                <li class="active treeview">
+                    <a class="waves-effect waves-dark" href="{{route('users')}}">
+                    <i class="fa-solid fa-burger"></i><span>Foods </span>
+                    </a>                
+                </li>
+                <li class="active treeview" >
+                    <a class="waves-effect waves-dark" href="{{route('users')}}">
+                    <i class="fa-solid fa-square-plus"></i><span> Orders</span>
                     </a>                
                 </li>
                 
@@ -179,11 +195,12 @@
    <script src="https://code.highcharts.com/highcharts.js"></script>
    <script src="https://code.highcharts.com/modules/exporting.js"></script>
    <script src="https://code.highcharts.com/highcharts-3d.js"></script>
-
+   <script src="https://kit.fontawesome.com/70b3797b8f.js" crossorigin="anonymous"></script>
    <!-- custom js -->
    <script type="text/javascript" src="{!! asset('js/main.min.js') !!}"></script>
    <script type="text/javascript" src="{!! asset('pages/dashboard.js') !!}"></script>
    <script type="text/javascript" src="{!! asset('pages/elements.js') !!}"></script>
+    
    <script src="{!! asset('js/menu.min.js') !!}"></script>
 <script>
 var $window = $(window);

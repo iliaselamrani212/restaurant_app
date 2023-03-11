@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
+use App\Models\Visitor ;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,5 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function (Request $request) {
+    $visitor = new Visitor();
+$visitor->ip_address = $request->ip();
+$visitor->visit_date = now()->format('Y-m-d');
+$visitor->save();
+    return view('welcome');
+});
 
-Route::get('users', 'App\Http\Controllers\UserController@getUsers');
+Route::get('users', 'App\Http\Controllers\UserController@getUsers')->name("users");
+Route::get('dashboard', 'App\Http\Controllers\UserController@dashboard')->name("dashboard");
