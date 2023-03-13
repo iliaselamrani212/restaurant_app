@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\FoodController;
 use Illuminate\Support\Facades\Route;
+
 use Illuminate\Http\Request;
 use App\Models\Visitor ;
 
@@ -17,6 +18,7 @@ Route::get('food',[
     Route::post('post-login', 'App\Http\Controllers\AuthController@postLogin'); 
     Route::get('registration', 'App\Http\Controllers\AuthController@registration');
     Route::post('post-registration', 'App\Http\Controllers\AuthController@postRegistration'); 
+
     Route::get('logout', 'App\Http\Controllers\AuthController@logout');
 
 Route::get('/', function (Request $request) {
@@ -36,4 +38,7 @@ Route::get('delete/{id}', 'App\Http\Controllers\CategoryController@removeCategor
 Route::get('foods', 'App\Http\Controllers\FoodController@getfoods')->name("foods");
 
 
+
+
+    Route::get('logout', 'App\Http\Controllers\AuthController@logout');
 

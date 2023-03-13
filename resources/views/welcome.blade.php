@@ -1,8 +1,8 @@
 @extends('navbar')
-<<<<<<< HEAD
+
 
     <!-- header section strats -->
-=======
+
 @section('title')
 Home
 @endsection
@@ -11,7 +11,7 @@ Home
       <img src="images/hero-bg.jpg" alt="">
     </div>
     @endsection
->>>>>>> 9f300c888fd4533428f23f0ee99206fc13435fcf
+
 @section('content')
     <!-- slider section -->
     <section class="slider_section ">
@@ -265,7 +265,7 @@ Home
       <div class="filters-content">
         <div class="row grid">
             @for($i=0;$i<3;$i++) 
-          <div class="col-sm-6 col-lg-4 all {{$food[$i]->category->name}}">      <!--  ll -->
+          <div class="col-sm-6 col-lg-4 all {{$food[$i]->name}}">      <!--  ll -->
             
             <div class="box">
                 <div>
@@ -277,7 +277,7 @@ Home
                       {{$food[$i]->name}}
                     </h5>
                     <p>
-                      {{$food[$i]->description}} @if( {{$user->name}})
+                      {{$food[$i]->description}} @if( $user !=null) $user->name @endif
                     </p>
                     <div class="options">
                       <h6>
