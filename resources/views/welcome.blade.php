@@ -1,6 +1,17 @@
 @extends('navbar')
+<<<<<<< HEAD
 
     <!-- header section strats -->
+=======
+@section('title')
+Home
+@endsection
+@section('image')
+ <div class="bg-box">
+      <img src="images/hero-bg.jpg" alt="">
+    </div>
+    @endsection
+>>>>>>> 9f300c888fd4533428f23f0ee99206fc13435fcf
 @section('content')
     <!-- slider section -->
     <section class="slider_section ">
