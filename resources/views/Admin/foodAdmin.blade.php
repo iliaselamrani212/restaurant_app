@@ -69,11 +69,10 @@ Foods | Admin
                              <!-- ?? card -->
                                                         <ul class="filters_menu">
                                     <li class="active" data-filter="*">All</li>
-                                                    <?php
-                                    use App\Models\Category;
-                                    $categories = Category::all();
-                                    ?>
-                                    @foreach(  $categories as $categorys)
+                                                    
+                                    
+                                    
+                                    @foreach(  $category as $categorys)
                                     <li data-filter=".{{$categorys->name}}">{{$categorys->name}}</li>
                                 @endforeach
                                 </ul>
@@ -83,9 +82,9 @@ Foods | Admin
                                        
                                   
             <!--  -->
-                             <div class="row row-cols-1 row-cols-md-6 g-4">
+                             
                                 @foreach($foods as $food)
-                                <div class="col-sm-6 col-lg-4 all {{$food->category->name}}">
+                                <div class="col-sm-6 col-lg-4 all {{$food->Category->name}}">
                                 <div class="card">
                                 <img src="images/f1.png" class="card-img-top" alt="...">
                                 <div class="card-body">
