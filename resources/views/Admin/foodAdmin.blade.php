@@ -67,16 +67,7 @@ Foods | Admin
                         <div class="row">
                            <div class="col-sm-12 table-responsive">
                              <!-- ?? card -->
-                                                        <ul class="filters_menu">
-                                    <li class="active" data-filter="*">All</li>
-                                                    
-                                    
-                                    
-                                    @foreach(  $category as $categorys)
-                                    <li data-filter=".{{$categorys->name}}">{{$categorys->name}}</li>
-                                @endforeach
-                                </ul>
-
+                           
                                 <div class="filters-content">
                                     <div class="row grid">
                                        

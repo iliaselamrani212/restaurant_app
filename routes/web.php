@@ -1,11 +1,11 @@
 <?php
 use App\Http\Controllers\FoodController;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Food;
 use Illuminate\Http\Request;
 use App\Models\Visitor ;
 
-
+use App\Models\Category;
 
 
 
@@ -25,8 +25,11 @@ Route::get('/', function (Request $request) {
     $visitor = new Visitor;
 $visitor->ip_address = $request->ip();
 $visitor->visit_date = now()->format('Y-m-d');
+$category = Category::OrderBy('name')->get();
+$food = Food::OrderBy('name')->get();
 $visitor->save();
-    return view('welcome');
+$user=null;
+    return view('welcome')->with('food',$food)->with('category',$category)->with('user',$user);
 });
 
 Route::get('users', 'App\Http\Controllers\UserController@getUsers')->name("users");
