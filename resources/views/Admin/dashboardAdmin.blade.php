@@ -1,6 +1,6 @@
 @extends('Admin/navbarAdmin')
 @section('title')
-dashboard
+dashboard | Admin
 @endsection
 @section('content')
 <div class="content-wrapper">
@@ -26,9 +26,9 @@ dashboard
                </div>
                <div class="col-lg-3 col-md-6">
                   <div class="card dashboard-product">
-                     <span>Products</span>
+                     <span>Visitors Today</span>
                      <h2 class="dashboard-total-products">{{$visitors}}</h2>
-                     <span class="label label-primary">Views</span>View Today
+                     <span class="label label-primary">Views</span>
                      <div class="side-box ">
                         <i class="ti-gift text-primary-color"></i>
                      </div>
@@ -105,17 +105,115 @@ dashboard
                   </div>
                </div>
                <!-- Pie chart(Without legend) start -->
-               <div class="col-md-4">
-                  <div class="card">
-                     <div class="card-header">
-                        <h5 class="card-header-text">Pie chart(Without legend) </h5>
-                     </div>
+               <div class="col-xl-8 col-lg-12">
+               <div class="card">
                      <div class="card-block">
-                        <div id="placeholder2" class="demo-placeholder" style="height:300px;"></div>
+                        <div class="table-responsive">
+                           <table class="table m-b-0 photo-table">
+                              <thead>
+                                 <tr class="text-uppercase">
+                                    <th>Photo</th>
+                                    <th>Project</th>
+                                    <th>Completed</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 <tr>
+                                    <th>
+                                       <img class="img-fluid img-circle" src="assets/images/avatar-2.png" alt="User">
+                                    </th>
+                                    <td>Appestia Project
+                                       <p><i class="icofont icofont-clock-time"></i>Created 14.9.2016</p>
+                                    </td>
+                                    <td>
+                                       <span class="pie" style="display: none;">226,134</span><svg class="peity" height="30" width="30"><path d="M 15.000000000000002 0 A 15 15 0 1 1 4.209902994920235 25.41987555688496 L 15 15" fill="#2196F3"></path><path d="M 4.209902994920235 25.41987555688496 A 15 15 0 0 1 14.999999999999996 0 L 15 15" fill="#ccc"></path></svg>
+                                    </td>
+                                    <td>50%</td>
+                                    <td>October 21, 2015</td>
+                                 </tr>
+                                 <tr>
+                                    <th>
+                                       <img class="img-fluid img-circle" src="assets/images/avatar-4.png" alt="User">
+                                    </th>
+                                    <td>Contract with belife Company
+                                       <p><i class="icofont icofont-clock-time"></i>Created 20.10.2016</p>
+                                    </td>
+                                    <td>
+                                       <span class="pie" style="display: none;">0.52/1.561</span><svg class="peity" height="30" width="30"><path d="M 15.000000000000002 0 A 15 15 0 0 1 28.00043211809656 22.482564048691025 L 15 15" fill="#2196F3"></path><path d="M 28.00043211809656 22.482564048691025 A 15 15 0 1 1 14.999999999999996 0 L 15 15" fill="#ccc"></path></svg>
+                                    </td>
+                                    <td>70%</td>
+                                    <td>November 21, 2015</td>
+                                 </tr>
+                                 <tr>
+                                    <th>
+                                       <img class="img-fluid img-circle" src="assets/images/avatar-1.png" alt="User">
+                                    </th>
+                                    <td>Web Consultancy project
+                                       <p><i class="icofont icofont-clock-time"></i>Created 20.10.2016</p>
+                                    </td>
+                                    <td>
+                                       <span class="pie" style="display: none;">1,4</span><svg class="peity" height="30" width="30"><path d="M 15.000000000000002 0 A 15 15 0 0 1 29.265847744427305 10.36474508437579 L 15 15" fill="#2196F3"></path><path d="M 29.265847744427305 10.36474508437579 A 15 15 0 1 1 14.999999999999996 0 L 15 15" fill="#ccc"></path></svg>
+                                    </td>
+                                    <td>40%</td>
+                                    <td>September 21, 2015</td>
+                                 </tr>
+                                 <tr>
+                                    <th>
+                                       <img class="img-fluid img-circle" src="assets/images/avatar-3.png" alt="User">
+                                    </th>
+                                    <td>Contract with belife Company
+                                       <p><i class="icofont icofont-clock-time"></i>Created 20.10.2016</p>
+                                    </td>
+                                    <td>
+                                       <span class="pie" style="display: none;">0.52/1.561</span><svg class="peity" height="30" width="30"><path d="M 15.000000000000002 0 A 15 15 0 0 1 28.00043211809656 22.482564048691025 L 15 15" fill="#2196F3"></path><path d="M 28.00043211809656 22.482564048691025 A 15 15 0 1 1 14.999999999999996 0 L 15 15" fill="#ccc"></path></svg>
+                                    </td>
+                                    <td>70%</td>
+                                    <td>November 21, 2015</td>
+                                 </tr>
+                                 <tr>
+                                    <th>
+                                       <img class="img-fluid img-circle" src="assets/images/avatar-1.png" alt="User">
+                                    </th>
+                                    <td>Contract with belife Company
+                                       <p><i class="icofont icofont-clock-time"></i>Created 20.10.2016</p>
+                                    </td>
+                                    <td>
+                                       <span class="pie" style="display: none;">0.52/1.561</span><svg class="peity" height="30" width="30"><path d="M 15.000000000000002 0 A 15 15 0 0 1 28.00043211809656 22.482564048691025 L 15 15" fill="#2196F3"></path><path d="M 28.00043211809656 22.482564048691025 A 15 15 0 1 1 14.999999999999996 0 L 15 15" fill="#ccc"></path></svg>
+                                    </td>
+                                    <td>70%</td>
+                                    <td>November 21, 2015</td>
+                                 </tr>
+                                 <tr>
+                                    <th>
+                                       <img class="img-fluid img-circle" src="assets/images/avatar-2.png" alt="User">
+                                    </th>
+                                    <td>Contract with belife Company
+                                       <p><i class="icofont icofont-clock-time"></i>Created 20.10.2016</p>
+                                    </td>
+                                    <td>
+                                       <span class="pie" style="display: none;">0.52/1.561</span><svg class="peity" height="30" width="30"><path d="M 15.000000000000002 0 A 15 15 0 0 1 28.00043211809656 22.482564048691025 L 15 15" fill="#2196F3"></path><path d="M 28.00043211809656 22.482564048691025 A 15 15 0 1 1 14.999999999999996 0 L 15 15" fill="#ccc"></path></svg>
+                                    </td>
+                                    <td>70%</td>
+                                    <td>November 21, 2015</td>
+                                 </tr>
+
+                              </tbody>
+                           </table>
+                        </div>
                      </div>
                   </div>
                </div>
+              
+            </div>
+            <!-- 2-1 block end -->
+               </div>
                <!-- Pie chart(Without legend) end -->
+                <!-- 2-1 block start -->
+            <div class="row">
+              
+                 
                
            
          </div>

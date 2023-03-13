@@ -9,7 +9,8 @@
      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
      <![endif]-->
-
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
@@ -63,9 +64,7 @@
                              
                
                <li class="dropdown pc-rheader-submenu message-notification search-toggle">
-                  <a href="#!" id="morphsearch-search" class="drop icon-circle txt-white">
-                     <i class="ti-search"></i>
-                  </a>
+                  
                </li>
             </ul>
             <!-- Navbar Right Menu-->
@@ -83,10 +82,10 @@
 
                   </li>
                   <!-- User Menu-->
-                  <li class="dropdown">
+                  <li class="dropdown" >
                      <a href="#!" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle drop icon-circle drop-image">
                         
-                        <span>John <b>Doe</b> <i class=" icofont icofont-simple-down"></i></span>
+                        <span>ILias <b>Doe</b> <i class=" icofont icofont-simple-down"></i></span>
 
                      </a>
                      <ul class="dropdown-menu settings-menu">
@@ -117,7 +116,7 @@
             <!-- Sidebar Menu-->
             <ul class="sidebar-menu">
                 <li class="nav-level">--- Navigation</li>
-                <li class="active treeview">
+                <li class="treeview">
                     <a class="waves-effect waves-dark" href="{{route('dashboard')}}">
                         <i class="icon-speedometer"></i><span> Dashboard</span>
                     </a>                
@@ -130,23 +129,32 @@
 
             </li>
             <li class="nav-level">---user</li>
-                <li class="active treeview">
+                <li class="treeview">
                     <a class="waves-effect waves-dark" href="{{route('users')}}">
                         <i class="icon-user"></i><span> users</span>
                     </a>                
                 </li>
                 <li class="nav-level">---Menu of food</li>
-                <li class="active treeview">
-                    <a class="waves-effect waves-dark" href="{{route('users')}}">
+                <li class="treeview">
+                    <a class="waves-effect waves-dark" href="{{route('Categories')}}">
                     <i class="fa-solid fa-sliders"></i><span> Categories</span>
                     </a>                
                 </li>
-                <li class="active treeview">
-                    <a class="waves-effect waves-dark" href="{{route('users')}}">
-                    <i class="fa-solid fa-burger"></i><span>Foods </span>
-                    </a>                
+               
+                <li class="treeview"><a class="waves-effect waves-dark" href="#!"> <i class="fa-solid fa-burger"></i><span>Foods </span><i class="icon-arrow-down"></i></a>
+                    <ul class="treeview-menu">
+                     <?php
+                     use App\Models\Category;
+                     $categories = Category::all();
+                     ?>
+                     <li><a class="waves-effect waves-dark" href="{{route('foods',0)}}"> <i class="fa-solid fa-burger"></i>All</a></li>
+                     @foreach( $categories as $categorie)
+                        <li><a class="waves-effect waves-dark" href="{{route('foods',$categorie->id)}}"> <i class="fa-solid fa-burger"></i></i>{{$categorie->name}}</a></li>
+                        @endforeach
+                      
+                    </ul>
                 </li>
-                <li class="active treeview" >
+                <li class="treeview" >
                     <a class="waves-effect waves-dark" href="{{route('users')}}">
                     <i class="fa-solid fa-square-plus"></i><span> Orders</span>
                     </a>                
@@ -165,6 +173,7 @@
     @yield('content')              
 
    <!-- Required Jqurey -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
    <script src=" {!! asset('plugins/Jquery/dist/jquery.min.js') !!}"></script>
    <script src="{!! asset('plugins/jquery-ui/jquery-ui.min.js') !!}"></script>
    <script src="{!! asset('plugins/tether/dist/js/tether.min.js') !!}"></script>
@@ -202,6 +211,8 @@
    <script type="text/javascript" src="{!! asset('pages/elements.js') !!}"></script>
     
    <script src="{!! asset('js/menu.min.js') !!}"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
 <script>
 var $window = $(window);
 var nav = $('.fixed-button');
@@ -213,6 +224,12 @@ $window.scroll(function(){
        nav.removeClass('active');
     }
 });
+const myModal = document.getElementById('myModal')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})
 </script>
 
 </body>

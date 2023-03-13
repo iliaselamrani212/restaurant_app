@@ -16,7 +16,7 @@ use App\Models\Visitor ;
 */
 
 Route::get('/', function (Request $request) {
-    $visitor = new Visitor();
+    $visitor = new Visitor;
 $visitor->ip_address = $request->ip();
 $visitor->visit_date = now()->format('Y-m-d');
 $visitor->save();
@@ -25,3 +25,9 @@ $visitor->save();
 
 Route::get('users', 'App\Http\Controllers\UserController@getUsers')->name("users");
 Route::get('dashboard', 'App\Http\Controllers\UserController@dashboard')->name("dashboard");
+Route::get('categories', 'App\Http\Controllers\CategoryController@getCategories')->name("Categories");
+Route::post('addCategory', 'App\Http\Controllers\CategoryController@addCategory')->name("addCategory");
+Route::get('delete/{id}', 'App\Http\Controllers\CategoryController@removeCategory')->name("removeCategory");
+Route::get('foods', 'App\Http\Controllers\FoodController@getfoods')->name("foods");
+
+
