@@ -55,13 +55,13 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
               <li class="nav-item ">
-                <a class="nav-link" href="index.html">Home </a>
+                <a class="nav-link" href="{{route('food')}}">Home </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="menu.html">Menu</a>
+                <a class="nav-link" href="{{ route('foodmenu') }}">Menu</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="about.html">About <span class="sr-only">(current)</span> </a>
+                <a class="nav-link"href="{{ route('about') }}">About <span class="sr-only">(current)</span> </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="book.html">Book Table</a>
@@ -130,9 +130,7 @@
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
-              <a href="" class="order_online">
-                Order Online
-              </a>
+             
             </div>
           </div>
         </nav>
@@ -160,14 +158,34 @@
               </h2>
             </div>
             <p>
-              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
-              in some form, by injected humour, or randomised words which don't look even slightly believable. If you
-              are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
-              the middle of text. All
+
+Ilias Food est un site de livraison de nourriture qui propose une grande variété de plats délicieux et sains. Avec des options pour tous les goûts, des repas végétariens et végétaliens aux plats de viande et de poisson, Ilias Food s'efforce de répondre aux besoins de tous les clients. Dans cette page, nous allons vous présenter l'histoire de Ilias Food, les plats les plus populaires de leur menu, leurs politiques de livraison et comment commander en ligne. <br>
+
+<h3>Histoire de Ilias Food :</h3>
+
+Ilias Food a été créé par Ilias, un passionné de la cuisine qui a décidé de mettre son talent au service des autres. Ilias a commencé sa carrière de chef en travaillant dans des restaurants de renom, où il a appris à préparer des plats exquis en utilisant des ingrédients frais et locaux. Après des années passées dans la restauration, Ilias a décidé de créer sa propre entreprise pour partager sa passion pour la nourriture saine et délicieuse avec le plus grand nombre de personnes possible. <br>
+<h3>Le menu de Ilias Food :</h3>
+
+Le menu de Ilias Food propose une grande variété de plats, avec des options pour tous les goûts et tous les régimes alimentaires. Les plats végétariens et végétaliens sont particulièrement populaires chez Ilias Food, avec des options telles que les tacos aux légumes grillés, les burgers de patate douce et les salades composées de légumes frais et de grains entiers. Les plats de viande et de poisson sont également disponibles, avec des options telles que les burgers de bœuf, les kebabs de poulet grillé et les salades de thon. <br>
+
+Ilias Food est également connu pour ses options de petit-déjeuner sains et délicieux, avec des plats tels que des bols de smoothie aux fruits et des toasts à l'avocat. Pour les gourmands, Ilias Food propose également une variété de desserts, y compris des gâteaux et des cookies faits maison. <br>
+
+<h3>Politique de livraison :</h3>
+
+Ilias Food propose une livraison rapide et fiable dans un rayon de 5 km autour de leur restaurant. Les frais de livraison varient en fonction de la distance de livraison et du montant de la commande. Ilias Food propose également des options de livraison gratuite pour les commandes supérieures à un certain montant. <br>
+
+<h3>Comment commander en ligne :</h3>
+
+Commander chez Ilias Food est simple et rapide. Il suffit de visiter leur site web et de parcourir leur menu en ligne. Une fois que vous avez choisi les plats que vous souhaitez commander, vous pouvez les ajouter à votre panier et passer à la caisse pour finaliser votre commande. Ilias Food accepte les paiements en ligne par carte de crédit ou par PayPal, ce qui rend le processus de commande encore plus facile. <br>
+
+
+
+Ilias Food est un excellent choix pour ceux qui cherchent à manger sainement tout en savourant des plats délicieux. Avec un menu varié, des options pour tous les goûts et tous les régimes alimentaires, et une politique de livraison rapide et fiable, Ilias Food est un choix sûr pour toute personne souhaitant commander de la nourriture en ligne. N'hésitez pas à essayer leur menu pour découvrir les saveurs uniques et les plats
+
+
+
             </p>
-            <a href="">
-              Read More
-            </a>
+         
           </div>
         </div>
       </div>

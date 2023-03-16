@@ -3,12 +3,12 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use App\Models\Food;
+use App\Models\User;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+    
     public function up(): void
     {
         Schema::create('resarvations', function (Blueprint $table) {
@@ -16,7 +16,10 @@ return new class extends Migration
             $table->unsignedBigInteger("user_id");
             $table->unsignedBigInteger("food_id");
             $table->string("address_reservation");
-            
+            $table->Integer('prix');
+            $table->Integer('nb');
+            $table->string("numero_de_telephone");
+            $table->string("confimer");
             $table->timestamps();
             $table->foreign('user_id')
           ->references('id')

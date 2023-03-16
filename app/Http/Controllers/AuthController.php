@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Validator,Redirect,Response;
-
+use App\Models\Commentaire;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Session;
@@ -37,9 +37,10 @@ class AuthController extends Controller
         $category = Category::OrderBy('name')->get();
             $food = Food::OrderBy('name')->get();
             $user = null; 
+            $commentaire=Commentaire::All();
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
-            return view('welcome')->with('food',$food)->with('category',$category)->with('user',$user);
+            return view('welcome')->with('food',$food)->with('category',$category)->with('user',$user)->with('commentaire',$commentaire);
             
         }
         return Redirect::to("login")->withSuccess('Oppes! You have entered invalid credentials');
@@ -58,8 +59,9 @@ class AuthController extends Controller
         $check = $this->create($data);
         $category = Category::OrderBy('name')->get();
             $food = Food::OrderBy('name')->get();
+            $commentaire=Commentaire::All();
            
-            return view('welcome')->with('food',$food)->with('category',$category);
+                return view('login');
     }
      
     public function dashboard()
@@ -85,6 +87,10 @@ class AuthController extends Controller
     public function logout() {
         Session::flush();
         Auth::logout();
-        return Redirect('login');
+        $user=null;
+        $commentaire=Commentaire::All();
+        $category = Category::OrderBy('name')->get();
+        $food = Food::OrderBy('name')->get();
+        return view('welcome')->with('food',$food)->with('category',$category)->with('user',$user)->with('commentaire',$commentaire);
     }
 }

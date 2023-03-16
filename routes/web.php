@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Food;
 use Illuminate\Http\Request;
 use App\Models\Visitor ;
-
+use App\Models\Commentaire;
 use App\Models\Category;
 
 
@@ -18,8 +18,9 @@ Route::get('food',[
     Route::post('post-login', 'App\Http\Controllers\AuthController@postLogin'); 
     Route::get('registration', 'App\Http\Controllers\AuthController@registration');
     Route::post('post-registration', 'App\Http\Controllers\AuthController@postRegistration'); 
-
-    Route::get('logout', 'App\Http\Controllers\AuthController@logout');
+    Route::post('addCommentaires','App\Http\Controllers\CommentaireController@addCommentaires')->name('addCommentaires');
+   
+    Route::get('logout', 'App\Http\Controllers\AuthController@logout')->name('logout');
 
 Route::get('/', function (Request $request) {
     $visitor = new Visitor;
@@ -29,7 +30,8 @@ $category = Category::OrderBy('name')->get();
 $food = Food::OrderBy('name')->get();
 $visitor->save();
 $user=null;
-    return view('welcome')->with('food',$food)->with('category',$category)->with('user',$user);
+$commentaire=Commentaire::All();
+    return view('welcome')->with('food',$food)->with('category',$category)->with('user',$user)->with('commentaire',$commentaire);
 });
 
 Route::get('users', 'App\Http\Controllers\UserController@getUsers')->name("users");
@@ -37,11 +39,18 @@ Route::get('dashboard', 'App\Http\Controllers\UserController@dashboard')->name("
 
 Route::get('categories', 'App\Http\Controllers\CategoryController@getCategories')->name("Categories");
 Route::post('addCategory', 'App\Http\Controllers\CategoryController@addCategory')->name("addCategory");
+Route::post('addReservation', 'App\Http\Controllers\ResarvationController@addReservation')->name("addReservation");
 Route::get('delete/{id}', 'App\Http\Controllers\CategoryController@removeCategory')->name("removeCategory");
 Route::get('foods', 'App\Http\Controllers\FoodController@getfoods')->name("foods");
+Route::get('/about', function () {
+    if (Auth::check()) {
+        $user = Auth::user();}
+        else{
+    $user = null;}
+    return view('about')->with('user',$user);
+})->name('about');
 
 
 
-
-    Route::get('logout', 'App\Http\Controllers\AuthController@logout');
+   
 
